@@ -73,7 +73,6 @@ export default function App() {
 
   return (
     <div className="app-container">
-      {/* Top bar */}
       <header className="app-header">
         <h1>Chat Assistant</h1>
         <button className="clear-btn" onClick={clearChat} disabled={loading}>
@@ -82,7 +81,6 @@ export default function App() {
       </header>
 
       <div className="app-main">
-        {/* LEFT: history column */}
         <aside className="history-panel">
           <div className="history-header">
             <span>History</span>
@@ -110,7 +108,6 @@ export default function App() {
           </button>
         </aside>
 
-        {/* RIGHT: chat area */}
         <section className="chat-panel">
           <main className="chat-window">
             {messages.map((msg, idx) => (

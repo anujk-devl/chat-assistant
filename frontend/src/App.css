@@ -13,7 +13,7 @@ body {
   color: #e5e7eb;
 }
 
-/* Full-screen app */
+
 .app-container {
   height: 100vh;
   width: 100vw;
@@ -29,11 +29,11 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 12px 24px;       /* top and side padding */
+  padding: 12px 24px;       
   box-sizing: border-box;
 }
 
-/* Top bar, same colors */
+
 .app-header {
   display: flex;
   justify-content: space-between;
@@ -63,7 +63,7 @@ body {
   background: #b91c1c;
 }
 
-/* Main: two columns, ratio similar to your sketch */
+
 .app-main {
   flex: 1;
   display: flex;
@@ -71,9 +71,9 @@ body {
   min-height: 0;
 }
 
-/* LEFT column – history */
+
 .history-panel {
-  width: 20%;             /* narrow like sketch */
+  width: 20%;             
   max-width: 240px;
   background: #020617;
   border-radius: 8px;
@@ -122,7 +122,7 @@ body {
   background: #111827;
 }
 
-/* Clear History button at bottom */
+
 .history-clear-btn {
   margin-top: 8px;
   padding: 8px 10px;
@@ -138,9 +138,8 @@ body {
   cursor: default;
 }
 
-/* RIGHT column – large chat area */
 .chat-panel {
-  flex: 1;                /* takes rest of space */
+  flex: 1;               
   display: flex;
   flex-direction: column;
   min-width: 0;
@@ -157,7 +156,7 @@ body {
   gap: 10px;
 }
 
-/* reuse previous bubble styles */
+
 .chat-bubble {
   max-width: 80%;
   padding: 8px 12px;
@@ -177,7 +176,7 @@ body {
   color: #e5e7eb;
 }
 
-/* bottom input bar spanning width (similar to sketch) */
+
 .input-area {
   display: flex;
   gap: 8px;
@@ -213,7 +212,7 @@ body {
   cursor: default;
 }
 
-/* Optional: stack panels on mobile */
+
 @media (max-width: 768px) {
   .app-main {
     flex-direction: column;
