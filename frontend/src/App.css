@@ -1,0 +1,231 @@
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background: #020617;
+  color: #e5e7eb;
+}
+
+/* Full-screen app */
+.app-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px x 735px;
+  margin: 0 auto;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.app-inner {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 12px 24px;       /* top and side padding */
+  box-sizing: border-box;
+}
+
+/* Top bar, same colors */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.app-header h1 {
+  font-size: 20px;
+}
+
+.clear-btn {
+  background: #dc2626;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.clear-btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.clear-btn:hover:not(:disabled) {
+  background: #b91c1c;
+}
+
+/* Main: two columns, ratio similar to your sketch */
+.app-main {
+  flex: 1;
+  display: flex;
+  gap: 16px;
+  min-height: 0;
+}
+
+/* LEFT column – history */
+.history-panel {
+  width: 20%;             /* narrow like sketch */
+  max-width: 240px;
+  background: #020617;
+  border-radius: 8px;
+  padding: 12px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #1f2937;
+}
+
+.history-header {
+  padding: 6px 8px;
+  border-radius: 4px;
+  border: 1px solid #1f2937;
+  margin-bottom: 8px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.history-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.history-empty {
+  font-size: 14px;
+  color: #9ca3af;
+  padding: 4px 0;
+}
+
+.history-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.history-item {
+  font-size: 14px;
+  padding: 6px 8px;
+  margin-bottom: 6px;
+  border-radius: 6px;
+  background: #111827;
+}
+
+/* Clear History button at bottom */
+.history-clear-btn {
+  margin-top: 8px;
+  padding: 8px 10px;
+  border-radius: 4px;
+  border: 1px solid #1f2937;
+  background: #dc2626;
+  color: #e5e7eb;
+  cursor: pointer;
+}
+
+.history-clear-btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+/* RIGHT column – large chat area */
+.chat-panel {
+  flex: 1;                /* takes rest of space */
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.chat-window {
+  flex: 1;
+  background: #020617;
+  border-radius: 8px;
+  padding: 12px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* reuse previous bubble styles */
+.chat-bubble {
+  max-width: 80%;
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-size: 14px;
+}
+
+.user-bubble {
+  align-self: flex-end;
+  background: #2563eb;
+  color: white;
+}
+
+.bot-bubble {
+  align-self: flex-start;
+  background: #111827;
+  color: #e5e7eb;
+}
+
+/* bottom input bar spanning width (similar to sketch) */
+.input-area {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.input-area input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #4b5563;
+  background: #020617;
+  color: #e5e7eb;
+  box-sizing: border-box;
+}
+
+.input-area input:disabled {
+  opacity: 0.7;
+}
+
+.input-area button {
+  padding: 10px 16px;
+  border-radius: 4px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.input-area button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+/* Optional: stack panels on mobile */
+@media (max-width: 768px) {
+  .app-main {
+    flex-direction: column;
+  }
+
+  .history-panel {
+    width: 100%;
+    max-width: none;
+    order: 2;
+  }
+
+  .chat-panel {
+    order: 1;
+  }
+}
