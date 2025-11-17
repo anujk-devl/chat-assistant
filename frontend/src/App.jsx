@@ -22,11 +22,16 @@ export default function App() {
     setLoading(true);
 
     try {
-      const res = await fetch("https://chat-assistant-backend.onrender.com/api/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: userMessage }),
-      });
+      const res = await fetch(
+  "https://chat-assistant-backend-2i9b.onrender.com/api/chat",
+  {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ message: userMessage }),
+  }
+);
+
+
 
       if (!res.ok) {
         throw new Error(`HTTP error! status: ${res.status}`);
